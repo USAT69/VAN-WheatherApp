@@ -30,7 +30,7 @@ async function weather(city){
 
       cc.style.padding =
       "20px 5px";
-      cc.style.marginTop="40vh";
+      cc.style.marginTop="30vh";
 
 
      if(dt.weather[0].main=="Rain"){
