@@ -42,7 +42,7 @@ async function weather(city){
 
      }
     else if(dt.weather[0].main=="Clouds"){
-         video.src="Clouds.mp4"
+         video.src="clouds.mp4"
 
      }
      else{
