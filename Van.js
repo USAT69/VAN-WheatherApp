@@ -33,10 +33,9 @@ async function weather(city) {
     cc.style.color = "rgb(255,125,231)";
     cc.style.backgroundColor = "rgba(0,0,0,0.6)";
     cc.style.fontSize = "25px";
-    cc.style.padding = "20px";
+    cc.style.padding = "101px";
     cc.style.borderRadius = "10px";
 
-    /* IMPORTANT */
     cc.style.position = "absolute";
     cc.style.top = "200px";
     cc.style.left = "50%";
