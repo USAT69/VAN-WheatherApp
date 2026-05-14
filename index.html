@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LiveweatherByVAN</title>
+    <link rel="stylesheet" href="project.css">
+</head>
+<body>
+      <video autoplay muted loop id="Video">
+   <source src="VanVideo.mp4">
+   
+</video>
+   <header>
+        <div class="logo"><img src="logovan.webp"  alt="imageoflogo"><div>VAN Weather App</div></div>
+         <div class="aboutus">
+            <button>Live time</button>
+        </div>
+
+        <div class="Aboutus">
+            <button onclick="window.location.href='about.html'">About us</button>
+        </div>
+</header>
+    <main>
+        <div class="search">
+
+   <input type="text" id="Cityji"
+   placeholder="Enter city">
+
+   <button id="searchkiid">
+      Search
+   </button>
+</div>
+
+
+   <div id="JS"></div>
+    </main>
+
+
+    <script src="Van.js"></script>
+    
+</body>
+</html>
