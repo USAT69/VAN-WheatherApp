@@ -26,9 +26,11 @@ async function weather(city) {
 
     let cc = document.getElementById("JS");
 
-    cc.innerHTML =
-        "Temp = " + dt.main.temp + "°C " +
-        " | Weather = " + dt.weather[0].description;
+        cc.innerHTML =
+    "🌡 Temp = " + dt.main.temp + "°C" +
+    " | ☁ Weather = " + dt.weather[0].description +
+    " | 👀 Feels Like = " + dt.main.feels_like + "°C" +
+    " | 🌫 Visibility = " + (dt.visibility / 1000) + " km";
 
     cc.style.color = "rgb(255,125,231)";
     cc.style.backgroundColor = "rgba(0,0,0,0.6)";
