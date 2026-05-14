@@ -1,51 +1,61 @@
-let x=document.querySelector("#searchkiid");
-x.addEventListener("click",(e)=>{
-    e.preventDefault()
-    let city =
-    document.getElementById("Cityji").value;
-    console.log(city)
-    weather(city)
+let x = document.querySelector("#searchkiid");
 
-})
-const apiKey ="448ad14b3794bb6ae7cadfa4e99e9485";
-let video =document.getElementById("Video");
-async function weather(city){
+x.addEventListener("click", (e) => {
+    e.preventDefault();
 
-    let x=await fetch(
-   `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`);
-    let dt=await x.json();
+    let city = document.getElementById("Cityji").value;
 
-    console.log(dt)
-    let cc=document.getElementById("JS")
-    cc.innerHTML ="Temp="+ dt.main.temp + "°C " + "Weather=" +dt.weather[0].description
-;
-     cc.style.color =
-     "rgb(255,125,231)";
+    console.log(city);
 
-      cc.style.backgroundColor =
-      "black";
+    weather(city);
+});
 
-     cc.style.fontSize =
-     "25px";
+const apiKey = "448ad14b3794bb6ae7cadfa4e99e9485";
 
-      cc.style.padding =
-      "20px 5px";
-      cc.style.marginTop="20px";
+let video = document.getElementById("Video");
 
+async function weather(city) {
 
-     if(dt.weather[0].main=="Rain"){
-         video.src="Rainvideo.mp4"
+    let x = await fetch(
+        `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`
+    );
 
-     }
-     else if(dt.weather[0].main=="Clear"){
-         video.src="Clearsky.mp4"
+    let dt = await x.json();
 
-     }
-    else if(dt.weather[0].main=="Clouds"){
-         video.src="clouds.mp4"
+    console.log(dt);
 
-     }
-     else{
-            video.src="haze.mp4"
-     }
+    let cc = document.getElementById("JS");
+
+    cc.innerHTML =
+        "Temp = " + dt.main.temp + "°C " +
+        " | Weather = " + dt.weather[0].description;
+
+    cc.style.color = "rgb(255,125,231)";
+    cc.style.backgroundColor = "rgba(0,0,0,0.6)";
+    cc.style.fontSize = "25px";
+    cc.style.padding = "20px";
+    cc.style.borderRadius = "10px";
+
+    /* IMPORTANT */
+    cc.style.position = "absolute";
+    cc.style.top = "200px";
+    cc.style.left = "50%";
+    cc.style.transform = "translateX(-50%)";
+    cc.style.zIndex = "1000";
+
+    if (dt.weather[0].main == "Rain") {
+        video.src = "Rainvideo.mp4";
+    }
+
+    else if (dt.weather[0].main == "Clear") {
+        video.src = "Clearsky.mp4";
+    }
+
+    else if (dt.weather[0].main == "Clouds") {
+        video.src = "clouds.mp4";
+    }
+
+    else {
+        video.src = "haze.mp4";
+    }
 }
